@@ -1,0 +1,37 @@
+'''import random
+shows=['FRIENDS','SUITS','SHERLOCK','MENTALIST','OFFICE','SUPERNATURAL','PSYCH','LOST','SCRUBS','FLEABAG','CHUCK','ELEMENTARY','REVENGE','LUCIFER']
+
+def hangman():
+    guesses=""
+    counter=6
+    rand_show=random.choice(shows)
+   
+    for x in range(len(rand_show)):
+        print("_ ",end="")
+    while(counter>0):
+        failed=0
+        char=input("\nGuess a letter").upper()
+        guesses+=char
+        if char not in rand_show:
+            counter=counter-1
+            print("Wrong guess.You have "+ str(counter)+" turns left")
+            if(counter==0):
+                print("No more turns left.You lose")
+                print("The word was "+ rand_show)
+                break
+
+        for letter in rand_show:
+            if letter in guesses:
+                print(letter,end="")
+            else:
+                print("_ ",end="")
+                failed+=1
+        if(failed==0):
+            print("\nYou win! The show is "+ rand_show)
+            break
+            
+choice=input("Are you ready to play?(Y/N)")
+if choice=="N":
+    print("Come back later")
+else:
+    hangman()
