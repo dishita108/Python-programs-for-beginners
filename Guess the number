@@ -1,0 +1,13 @@
+import random
+x=1
+while(x==1):
+    a=(random.randint(0,20))
+    n=int(input("Enter a number"))
+    print(a,n)
+    if n<a:
+        print("Too low")
+    elif n>a:
+        print("Too high")
+    else:
+        print("Number matched")
+    x=int(input("Enter 1 to continue and 0 to exit"))
