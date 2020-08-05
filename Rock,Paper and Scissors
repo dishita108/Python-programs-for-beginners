@@ -1,0 +1,37 @@
+import random
+game_list=['rock', 'paper', 'scissors']
+x=1
+player,comp=0,0
+print("WELCOME TO THE GAME.THE FIRST PLAYER TO SCORE 5 POINTS WINS")
+while(x==1):
+    
+    if(player!=5 or comp!=5):
+        a=random.choice(game_list)
+        p=input("\nEnter rock,paper or scissors")
+        print("Computer plays",a)
+        if((p=='rock' and a=='scissors') or(p=='paper' and a=='rock') or (p=='scissors' and a=='paper')):
+            print("YOU WIN A POINT!")
+            player+=1
+            
+        elif(p==a):
+            print("ITS A TIE!")
+            player+=1
+            comp+=1
+        else:
+            print("COMPUTER WINS A POINT!")
+            comp+=1
+            
+        if(player==5 and comp!=5):
+            print("FINAL SCORE:\nYOU:"+ str(player)+"   COMPUTER:"+str(comp))
+            print("YOU WIN!!")
+        elif(comp==5 and player!=5):
+            print("FINAL SCORE:\nYOU:"+ str(player)+"   COMPUTER:"+str(comp))
+            print("COMPUTER WINS!!")
+        elif(player==5 and comp==5):
+            print("FINAL SCORE:\nYOU:"+ str(player)+"   COMPUTER:"+str(comp))
+            print("ITS A TIE!!")
+        else:
+            continue
+    x=int(input("Enter 1 to continue and 0 to exit"))
+    player,comp=0,0
+
